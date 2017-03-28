@@ -1,0 +1,41 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+
+			<%= f.label :phone_number %>
+			<%= f.text_field :phone_number %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<%= f.label :password_confirmation, "Confirmation" %>
+			<%= f.password_field :password_confirmation %>
+
+			<%= f.label :car_type %>
+			<%= f.radio_button :car_type_id, "1" %>
+				<%= f.label :car_type_id_1, "Малолитражка" %>
+			<%= f.radio_button :car_type_id, "2" %>
+				<%= f.label :car_type_id_2, "Седан" %>
+			<%= f.radio_button :car_type_id, "3" %>
+				<%= f.label :car_type_id_3, "Представительская" %>
+			<%= f.radio_button :car_type_id, "4" %>
+				<%= f.label :car_type_id_4, "Кроссовер" %>
+			<%= f.radio_button :car_type_id, "5" %>
+				<%= f.label :car_type_id_5, "Внедорожник" %>
+
+			<%= f.label :city_id %>
+			<%= f.text_field :city_id %>
+
+			<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>
+
+
