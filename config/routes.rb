@@ -1,42 +1,42 @@
  SampleApp::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
-  resources :users do
-    member do
-      get :favorite_carwashes
-    end
-  end
+  #resources :users do
+   # member do
+    #  get :favorite_carwashes
+    #end
+  #end
 
-  resources :favorites, only: [:index]
-  resources :sessions, only: [:new, :create, :destroy]
-  resources :carwashes, only: [:new, :create, :index, :show, :update]
-  resources :cw_sessions, only: [:new, :create, :destroy]
+  #resources :favorites, only: [:index]
+  #resources :sessions, only: [:new, :create, :destroy]
+  #resources :carwashes, only: [:new, :create, :index, :show, :update]
+  #resources :cw_sessions, only: [:new, :create, :destroy]
 
   root 'static_pages#home'
-  match '/signup',        to: 'users#new',            via: 'get'
-  match '/signin',        to: 'sessions#new',         via: 'get'
-  match '/signin',        to: 'sessions#create',      via: 'post'
-  match '/signout',       to: 'sessions#destroy',     via: 'delete'
-  match '/carwashup',     to: 'carwashes#new',        via: 'get'
-  match '/carwashin',     to: 'cw_sessions#new',      via: 'get'
-  match '/carwashin',     to: 'cw_sessions#create',   via: 'post'
-  match '/carwashout',    to: 'cw_sessions#destroy',  via: 'delete'
+  #match '/signup',        to: 'users#new',            via: 'get'
+  #match '/signin',        to: 'sessions#new',         via: 'get'
+  #match '/signin',        to: 'sessions#create',      via: 'post'
+  #match '/signout',       to: 'sessions#destroy',     via: 'delete'
+  #match '/carwashup',     to: 'carwashes#new',        via: 'get'
+  #match '/carwashin',     to: 'cw_sessions#new',      via: 'get'
+  #match '/carwashin',     to: 'cw_sessions#create',   via: 'post'
+  #match '/carwashout',    to: 'cw_sessions#destroy',  via: 'delete'
   match '/help',          to: 'static_pages#help',    via: 'get'
   match '/about',         to: 'static_pages#about',   via: 'get'
   match '/contact',       to: 'static_pages#contact', via: 'get'
-  match '/favorites/:id', to: 'favorites#index',      via:'get'
+  #match '/favorites/:id', to: 'favorites#index',      via:'get'
   
 
   #api
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:index, :create, :show, :update, :destroy]
-      resources :sessions, only: [:create, :index]
-      resources :carwashes, only: [:show, :index]
-      resources :favorites, only: [:index]
-      resources :schedules, only: [:show]
+      #resources :users, only: [:index, :create, :show, :update, :destroy]
+      #resources :sessions, only: [:create, :index]
+      #resources :carwashes, only: [:show, :index]
+      #resources :favorites, only: [:index]
+      #resources :schedules, only: [:show]
       resources :health_params, only: [:create]
-      match '/favorites/:id', to: 'favorites#index',      via:'get'
+      #match '/favorites/:id', to: 'favorites#index',      via:'get'
     end
   end
   

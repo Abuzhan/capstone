@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328193526) do
+ActiveRecord::Schema.define(version: 20170402183704) do
 
   create_table "health_params", force: true do |t|
     t.string   "temperature"
     t.string   "pulse"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "time"
   end
 
 end

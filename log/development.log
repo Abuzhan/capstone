@@ -18081,3 +18081,1841 @@ ActionView::Template::Error (SQLite3::SQLException: no such table: users: SELECT
   Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.4ms)
   Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
   Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (58.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-29 04:43:58 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'b4b67d546563475941a59ec7829a1b2c9c35cef1' LIMIT 1
+SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'b4b67d546563475941a59ec7829a1b2c9c35cef1' LIMIT 1
+  Rendered layouts/_header.html.erb (79.7ms)
+Completed 500 Internal Server Error in 383ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: users: SELECT  "users".* FROM "users"  WHERE "users"."remember_token" = 'b4b67d546563475941a59ec7829a1b2c9c35cef1' LIMIT 1):
+     6: 					<ul class="nav pull-right">
+     7: 						<li><%= link_to "Главная",    root_path %></li>
+     8: 						<li><%= link_to "О нас",    help_path %></li>
+     9: 						<% if signed_in? %>
+    10: 							<li><%= link_to "Users", users_path %> </li>
+    11: 							<li id="fat-menu" class="dropdown">
+    12: 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  app/helpers/sessions_helper.rb:20:in `current_user'
+  app/helpers/sessions_helper.rb:11:in `signed_in?'
+  app/views/layouts/_header.html.erb:9:in `_app_views_layouts__header_html_erb__1925856667691685057_38438860'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2848543811229137189_37485880'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (40.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:07:20 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 36ms
+
+NoMethodError (undefined method `permit' for #<Array:0x00000003c17ac0>):
+  app/controllers/api/v1/health_params_controller.rb:20:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:6:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.4ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:07:53 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for #<Array:0x000000039fe7c0>):
+  app/controllers/api/v1/health_params_controller.rb:20:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:8:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:7:in `each'
+  app/controllers/api/v1/health_params_controller.rb:7:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.5ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:12:45 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `permit' for #<Array:0x000000039d57d0>):
+  app/controllers/api/v1/health_params_controller.rb:20:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:8:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:7:in `each'
+  app/controllers/api/v1/health_params_controller.rb:7:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.2ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:12:47 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for #<Array:0x000000020337f0>):
+  app/controllers/api/v1/health_params_controller.rb:20:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:8:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:7:in `each'
+  app/controllers/api/v1/health_params_controller.rb:7:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:13:13 +0600
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"health_param":
+		{
+		"temperature": "7057960015",
+		"pulse": "Alikhan"
+		},
+		{
+		"temperature": "7057960017",
+		"pulse": "Alikhan"
+		}
+		
+	
+}
+
+ActionDispatch::ParamsParser::ParseError (822: unexpected token at '{
+	"health_param":
+		{
+		"temperature": "7057960015",
+		"pulse": "Alikhan"
+		},
+		{
+		"temperature": "7057960017",
+		"pulse": "Alikhan"
+		}
+		
+	
+}'):
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:53:in `rescue in parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:32:in `parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:23:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__142229592363782976__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (54.9ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:27:03 +0600
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"health_param":
+		{
+		"temperature": "7057960015",
+		"pulse": "Alikhan"
+		},
+		{
+		"temperature": "7057960017",
+		"pulse": "Alikhan"
+		}
+}
+
+ActionDispatch::ParamsParser::ParseError (822: unexpected token at '{
+	"health_param":
+		{
+		"temperature": "7057960015",
+		"pulse": "Alikhan"
+		},
+		{
+		"temperature": "7057960017",
+		"pulse": "Alikhan"
+		}
+}'):
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:53:in `rescue in parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:32:in `parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:23:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__142229592363782976__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (48.4ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:27:52 +0600
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"health_param":
+		{
+		"temperature": "7057960015",
+		"pulse": "Alikhan"
+		},
+		{
+		"temperature": "7057960017",
+		"pulse": "Alikhan"
+		}
+}
+
+ActionDispatch::ParamsParser::ParseError (822: unexpected token at '{
+	"health_param":
+		{
+		"temperature": "7057960015",
+		"pulse": "Alikhan"
+		},
+		{
+		"temperature": "7057960017",
+		"pulse": "Alikhan"
+		}
+}'):
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:53:in `rescue in parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:32:in `parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:23:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__142229592363782976__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (82.6ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:28:19 +0600
+
+SyntaxError (/home/snow/Rails_Projects/Capstone/app/controllers/api/v1/health_params_controller.rb:35: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack-pjax (1.0.0) lib/rack/pjax.rb:12:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__142229592363782976__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:28:43 +0600
+
+SyntaxError (/home/snow/Rails_Projects/Capstone/app/controllers/api/v1/health_params_controller.rb:35: syntax error, unexpected end-of-input, expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack-pjax (1.0.0) lib/rack/pjax.rb:12:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__142229592363782976__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (65.6ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:29:00 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 7ms
+
+NoMethodError (undefined method `temperature' for {"temperature"=>"7057960015", "pulse"=>"Alikhan"}:ActiveSupport::HashWithIndifferentAccess):
+  app/controllers/api/v1/health_params_controller.rb:20:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:18:in `each'
+  app/controllers/api/v1/health_params_controller.rb:18:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (64.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 01:59:12 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for #<Array:0x007f429d0c5dc8>):
+  app/controllers/api/v1/health_params_controller.rb:34:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:19:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.4ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:01:50 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for #<Array:0x000000022f4f20>):
+  app/controllers/api/v1/health_params_controller.rb:34:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:19:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.8ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:01:52 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for #<Array:0x007f429c9c8688>):
+  app/controllers/api/v1/health_params_controller.rb:34:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:19:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.8ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (47.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:03:05 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/api/v1/health_params_controller.rb:19:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.0ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:03:42 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (73.5ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:03:42 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Wed, 29 Mar 2017 20:03:42 UTC +00:00]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Wed, 29 Mar 2017 20:03:42 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Wed, 29 Mar 2017 20:03:42 UTC +00:00]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.13ms)
+Completed 200 OK in 196ms (Views: 41.6ms | ActiveRecord: 95.9ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:04:01 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:04:01 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Wed, 29 Mar 2017 20:04:01 UTC +00:00]]
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Wed, 29 Mar 2017 20:04:01 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Wed, 29 Mar 2017 20:04:01 UTC +00:00]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 32ms (Views: 0.5ms | ActiveRecord: 19.0ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:04:45 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `permit' for #<Array:0x007f429d412df0>):
+  app/controllers/api/v1/health_params_controller.rb:34:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:9:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:8:in `each'
+  app/controllers/api/v1/health_params_controller.rb:8:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.7ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:13:12 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `stringify_keys' for :temperature:Symbol):
+  app/controllers/api/v1/health_params_controller.rb:9:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:8:in `each'
+  app/controllers/api/v1/health_params_controller.rb:8:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (49.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:13:28 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:13:28 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:13:28 UTC +00:00]]
+  [1m[35m (7.5ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 20:13:28 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:13:28 UTC +00:00]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 36ms (Views: 3.0ms | ActiveRecord: 18.8ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:14:52 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 3ms
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/api/v1/health_params_controller.rb:9:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:8:in `each'
+  app/controllers/api/v1/health_params_controller.rb:8:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.0ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:15:04 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:15:04 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:15:04 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 20:15:04 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:15:04 UTC +00:00]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 40ms (Views: 15.2ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:15:15 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (13.6ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:15:15 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:15:15 UTC +00:00]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (7.1ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 20:15:15 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:15:15 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 45ms (Views: 0.3ms | ActiveRecord: 25.4ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:16:32 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for #<Array:0x00000003bd4888>):
+  app/controllers/api/v1/health_params_controller.rb:34:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:9:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:8:in `each'
+  app/controllers/api/v1/health_params_controller.rb:8:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.5ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:18:49 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Unpermitted parameters: health_param
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:18:50 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:18:50 UTC +00:00]]
+  [1m[35m (3.7ms)[0m  commit transaction
+Unpermitted parameters: health_param
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 20:18:50 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:18:50 UTC +00:00]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 34ms (Views: 9.5ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:19:05 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Unpermitted parameters: health_param
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:19:05 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:19:05 UTC +00:00]]
+  [1m[35m (4.7ms)[0m  commit transaction
+Unpermitted parameters: health_param
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 20:19:05 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:19:05 UTC +00:00]]
+  [1m[36m (11.6ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 18.2ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:20:50 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Unpermitted parameters: health_param
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:20:51 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:20:51 UTC +00:00]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Unpermitted parameters: health_param
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 20:20:51 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:20:51 UTC +00:00]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 40ms (Views: 10.8ms | ActiveRecord: 11.8ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:33:26 +0600
+
+SyntaxError (/home/snow/Rails_Projects/Capstone/app/controllers/api/v1/health_params_controller.rb:34: syntax error, unexpected ']', expecting ')'
+		params.permit(:temperature, :pulse])#.delete_if{ |k,v| v.nil?}
+		                                   ^):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack-pjax (1.0.0) lib/rack/pjax.rb:12:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__142229592363782976__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.2ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:33:46 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Unpermitted parameters: health_param
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:33:46 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:33:46 UTC +00:00]]
+  [1m[35m (28.5ms)[0m  commit transaction
+Unpermitted parameters: health_param
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 20:33:46 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:33:46 UTC +00:00]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 47ms (Views: 1.8ms | ActiveRecord: 35.0ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:33:59 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Unpermitted parameters: health_param
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 20:33:59 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:33:59 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Unpermitted parameters: health_param
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (7.6ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 20:33:59 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 20:33:59 UTC +00:00]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 31ms (Views: 0.4ms | ActiveRecord: 14.9ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:52:40 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for {"temperature"=>"7057960015", "pulse"=>"Alikhan"}:ActiveSupport::HashWithIndifferentAccess):
+  app/controllers/api/v1/health_params_controller.rb:46:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.8ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:53:29 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+TypeError (no implicit conversion of Symbol into String):
+  app/controllers/api/v1/health_params_controller.rb:46:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.8ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:55:26 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 2ms
+
+NameError (undefined local variable or method `record' for #<Api::V1::HealthParamsController:0x000000039fdff0>):
+  app/controllers/api/v1/health_params_controller.rb:46:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.6ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 02:56:00 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+TypeError (no implicit conversion of Symbol into String):
+  app/controllers/api/v1/health_params_controller.rb:46:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.0ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:00:06 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for {"temperature"=>"7057960015", "pulse"=>"Alikhan"}:ActiveSupport::HashWithIndifferentAccess):
+  app/controllers/api/v1/health_params_controller.rb:46:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.5ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:00:26 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 2ms
+
+NameError (undefined local variable or method `records' for #<Api::V1::HealthParamsController:0x007f429ca6f668>):
+  app/controllers/api/v1/health_params_controller.rb:46:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (52.9ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:00:43 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `permit' for {"temperature"=>"7057960015", "pulse"=>"Alikhan"}:ActiveSupport::HashWithIndifferentAccess):
+  app/controllers/api/v1/health_params_controller.rb:46:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.7ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:01:49 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 10ms
+
+NoMethodError (undefined method `params' for {"temperature"=>"7057960015", "pulse"=>"Alikhan"}:ActiveSupport::HashWithIndifferentAccess):
+  app/controllers/api/v1/health_params_controller.rb:46:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.8ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.8ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (68.6ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:02:04 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Unpermitted parameters: health_param
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 21:02:04 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 21:02:04 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Completed 500 Internal Server Error in 13ms
+
+NameError (undefined local variable or method `health_params' for #<Api::V1::HealthParamsController:0x007f429ccb63b8>):
+  app/controllers/api/v1/health_params_controller.rb:35:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.9ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:02:17 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Unpermitted parameters: health_param
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 21:02:18 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 21:02:18 UTC +00:00]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Unpermitted parameters: health_param
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 21:02:18 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 21:02:18 UTC +00:00]]
+  [1m[35m (32.7ms)[0m  commit transaction
+Completed 500 Internal Server Error in 48ms
+
+ArgumentError (too few arguments):
+  app/controllers/api/v1/health_params_controller.rb:39:in `format'
+  app/controllers/api/v1/health_params_controller.rb:39:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (86.6ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:03:14 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Unpermitted parameters: health_param
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 21:03:14 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 21:03:14 UTC +00:00]]
+  [1m[36m (111.3ms)[0m  [1mcommit transaction[0m
+Unpermitted parameters: health_param
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 21:03:14 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 21:03:14 UTC +00:00]]
+  [1m[35m (9.4ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 151ms (Views: 1.6ms | ActiveRecord: 124.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:03:38 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Unpermitted parameters: health_param
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", Wed, 29 Mar 2017 21:03:38 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 21:03:38 UTC +00:00]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+Unpermitted parameters: health_param
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", Wed, 29 Mar 2017 21:03:38 UTC +00:00], ["updated_at", Wed, 29 Mar 2017 21:03:38 UTC +00:00]]
+  [1m[35m (4.0ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 19ms (Views: 3.4ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:06:48 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for {"temperature"=>"7057960015", "pulse"=>"Alikhan"}:ActiveSupport::HashWithIndifferentAccess):
+  app/controllers/api/v1/health_params_controller.rb:49:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (35.6ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:07:03 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/api/v1/health_params_controller.rb:49:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:07:18 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `permit' for {"temperature"=>"7057960015", "pulse"=>"Alikhan"}:ActiveSupport::HashWithIndifferentAccess):
+  app/controllers/api/v1/health_params_controller.rb:49:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.5ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-03-30 03:11:21 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+TypeError (no implicit conversion of Symbol into String):
+  app/controllers/api/v1/health_params_controller.rb:49:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-02 23:43:16 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (uninitialized constant ApplicationController::SessionsHelper):
+  app/controllers/application_controller.rb:5:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/api/v1/base_controller.rb:1:in `<top (required)>'
+  app/controllers/api/v1/health_params_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (19.2ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (65.2ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-02 23:44:10 +0600
+
+ActionController::RoutingError (uninitialized constant ApplicationController::SessionsHelper):
+  app/controllers/application_controller.rb:5:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/api/v1/base_controller.rb:1:in `<top (required)>'
+  app/controllers/api/v1/health_params_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (52.0ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-02 23:44:36 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 25ms
+
+TypeError (no implicit conversion of Symbol into String):
+  app/controllers/api/v1/health_params_controller.rb:49:in `healthparam_params'
+  app/controllers/api/v1/health_params_controller.rb:33:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:32:in `each'
+  app/controllers/api/v1/health_params_controller.rb:32:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-04-02 23:44:58 +0600
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "health_params"
+  [1m[36mHealthParam Load (0.1ms)[0m  [1mSELECT "health_params".* FROM "health_params" ORDER BY "health_params"."id" DESC LIMIT 1[0m
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (43.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (2.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/layouts/rails_admin/_navigation.html.haml (6.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (3.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/layouts/rails_admin/pjax.html.haml (18.6ms)
+Completed 200 OK in 1274ms (Views: 783.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery-6e3920d87a0f9be18aff05235d9c84f8.js?body=1" for 127.0.0.1 at 2017-04-02 23:44:59 +0600
+
+
+Started GET "/assets/jquery_ujs-476c4637710ab3426db93d8534b71423.js?body=1" for 127.0.0.1 at 2017-04-02 23:45:00 +0600
+
+
+Started GET "/admin/health_param?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-04-02 23:45:03 +0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"health_param"}
+  [1m[35mHealthParam Load (0.9ms)[0m  SELECT "health_params".* FROM "health_params" ORDER BY health_params.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "health_params"[0m
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (205.8ms)
+Completed 200 OK in 260ms (Views: 238.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:06:25 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>[{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, {"temperature"=>"7057960017", "pulse"=>"Alikhan"}]}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `permit' for #<Array:0x007f5b34ebc648>):
+  app/controllers/api/v1/health_params_controller.rb:66:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:48:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (48.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:07:01 +0600
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"health_param": 
+		{
+		"temperature": "7057960015",
+		"pulse": "Alikhan"
+		},
+	"health_param":
+		{
+		"temperature": "7057960017",
+		"pulse": "Alikhan"
+		}
+	]
+}
+
+ActionDispatch::ParamsParser::ParseError (822: unexpected token at '{
+	"health_param": 
+		{
+		"temperature": "7057960015",
+		"pulse": "Alikhan"
+		},
+	"health_param":
+		{
+		"temperature": "7057960017",
+		"pulse": "Alikhan"
+		}
+	]
+}'):
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:53:in `rescue in parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:32:in `parse_formatted_parameters'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:23:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__2937925964887099837__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/snow/.rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (56.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:07:23 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (15.9ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[35m (5.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[36m (4.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.6ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[36m (4.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[35m (4.6ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.6ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:07:23 UTC +00:00]]
+  [1m[35m (4.6ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 209ms (Views: 30.0ms | ActiveRecord: 69.5ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:11:12 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+Completed 400 Bad Request in 1ms
+
+ActionController::ParameterMissing (param not found: health_param):
+  app/controllers/api/v1/health_params_controller.rb:66:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:48:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.2ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:11:20 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 4ms
+
+NameError (undefined local variable or method `i' for #<Api::V1::HealthParamsController:0x007f5b354871b8>):
+  app/controllers/api/v1/health_params_controller.rb:66:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:48:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.5ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:12:12 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 5ms
+
+NameError (undefined local variable or method `number' for #<Api::V1::HealthParamsController:0x007f5b353e7cd0>):
+  app/controllers/api/v1/health_params_controller.rb:68:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:49:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.9ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:13:01 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 5ms
+
+NameError (undefined local variable or method `number' for #<Api::V1::HealthParamsController:0x007f5b34e62350>):
+  app/controllers/api/v1/health_params_controller.rb:68:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:49:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (23.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (87.3ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:13:39 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/api/v1/health_params_controller.rb:69:in `+'
+  app/controllers/api/v1/health_params_controller.rb:69:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:49:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (43.7ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:15:01 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 1ms
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/api/v1/health_params_controller.rb:69:in `+'
+  app/controllers/api/v1/health_params_controller.rb:69:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:49:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.7ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:15:32 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+Completed 400 Bad Request in 2ms
+
+ActionController::ParameterMissing (param not found: :health_param1):
+  app/controllers/api/v1/health_params_controller.rb:70:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:49:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.5ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:16:00 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.1ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[35m (7.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[35m (5.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[35m (5.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[35m (5.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:16:00 UTC +00:00]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 126ms (Views: 16.3ms | ActiveRecord: 70.9ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:23:27 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 2ms
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/api/v1/health_params_controller.rb:68:in `+'
+  app/controllers/api/v1/health_params_controller.rb:68:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:49:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.1ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:23:51 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:23:51 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:23:51 UTC +00:00]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Completed 500 Internal Server Error in 16ms
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/api/v1/health_params_controller.rb:51:in `+'
+  app/controllers/api/v1/health_params_controller.rb:51:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.5ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:25:44 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960015", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960017", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (18.0ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[36m (5.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.4ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[35m (9.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960015"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960017"], ["updated_at", Sun, 02 Apr 2017 18:25:44 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Completed 400 Bad Request in 158ms
+
+ActionController::ParameterMissing (param not found: health_param11):
+  app/controllers/api/v1/health_params_controller.rb:69:in `create_params'
+  app/controllers/api/v1/health_params_controller.rb:49:in `block in create'
+  app/controllers/api/v1/health_params_controller.rb:47:in `create'
+
+
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.7ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (48.6ms)
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:27:04 +0600
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960001", "pulse"=>"Alikhan"}, "health_param2"=>{"temperature"=>"7057960002", "pulse"=>"Alikhan"}, "health_param3"=>{"temperature"=>"7057960003", "pulse"=>"Alikhan"}, "health_param4"=>{"temperature"=>"7057960004", "pulse"=>"Alikhan"}, "health_param5"=>{"temperature"=>"7057960005", "pulse"=>"Alikhan"}, "health_param6"=>{"temperature"=>"7057960006", "pulse"=>"Alikhan"}, "health_param7"=>{"temperature"=>"7057960007", "pulse"=>"Alikhan"}, "health_param8"=>{"temperature"=>"7057960008", "pulse"=>"Alikhan"}, "health_param9"=>{"temperature"=>"7057960009", "pulse"=>"Alikhan"}, "health_param10"=>{"temperature"=>"7057960010", "pulse"=>"Alikhan"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960001"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[36m (16.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960002"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960003"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960004"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960005"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[36m (6.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (15.4ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960006"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[35m (6.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960007"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960008"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960009"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (5.5ms)[0m  begin transaction
+  [1m[36mSQL (5.2ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960010"], ["updated_at", Sun, 02 Apr 2017 18:27:04 UTC +00:00]]
+  [1m[35m (12.5ms)[0m  commit transaction
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 244ms (Views: 12.0ms | ActiveRecord: 133.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTimeToHealthParams (20170402183704)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "health_params" ADD "time" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20170402183704"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started POST "/api/v1/health_params" for 127.0.0.1 at 2017-04-03 00:42:01 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::HealthParamsController#create as */*
+  Parameters: {"health_param1"=>{"temperature"=>"7057960001", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param2"=>{"temperature"=>"7057960002", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param3"=>{"temperature"=>"7057960003", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param4"=>{"temperature"=>"7057960004", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param5"=>{"temperature"=>"7057960005", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param6"=>{"temperature"=>"7057960006", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param7"=>{"temperature"=>"7057960007", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param8"=>{"temperature"=>"7057960008", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param9"=>{"temperature"=>"7057960009", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param10"=>{"temperature"=>"7057960010", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param11"=>{"temperature"=>"7057960001", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param12"=>{"temperature"=>"7057960002", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param13"=>{"temperature"=>"7057960003", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param14"=>{"temperature"=>"7057960004", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param15"=>{"temperature"=>"7057960005", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param16"=>{"temperature"=>"7057960006", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param17"=>{"temperature"=>"7057960007", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param18"=>{"temperature"=>"7057960008", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param19"=>{"temperature"=>"7057960009", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param20"=>{"temperature"=>"7057960010", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param21"=>{"temperature"=>"7057960001", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param22"=>{"temperature"=>"7057960002", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param23"=>{"temperature"=>"7057960003", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param24"=>{"temperature"=>"7057960004", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param25"=>{"temperature"=>"7057960005", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param26"=>{"temperature"=>"7057960006", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param27"=>{"temperature"=>"7057960007", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param28"=>{"temperature"=>"7057960008", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param29"=>{"temperature"=>"7057960009", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param30"=>{"temperature"=>"7057960010", "pulse"=>"Alikhan", "time"=>"2016-12-10 11:58:17.717127"}, "health_param"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (23.9ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960001"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (15.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (7.4ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960002"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960003"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (5.9ms)[0m  commit transaction
+  [1m[36m (10.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960004"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (17.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960005"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960006"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960007"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960008"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (17.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960009"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (3.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (7.8ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960010"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (3.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (9.8ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960001"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (59.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960002"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960003"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (7.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960004"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960005"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960006"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960007"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960008"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960009"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (4.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960010"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (4.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960001"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.4ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960002"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960003"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (4.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960004"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (7.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (8.4ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960005"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960006"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960007"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960008"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (5.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960009"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[35m (5.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "health_params" ("created_at", "pulse", "temperature", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00], ["pulse", "Alikhan"], ["temperature", "7057960010"], ["time", Sat, 10 Dec 2016 11:58:17 UTC +00:00], ["updated_at", Sun, 02 Apr 2017 18:42:02 UTC +00:00]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 200 OK in 715ms (Views: 21.8ms | ActiveRecord: 360.1ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-04-03 00:43:03 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "health_params"
+  [1m[36mHealthParam Load (0.1ms)[0m  [1mSELECT "health_params".* FROM "health_params" ORDER BY "health_params"."id" DESC LIMIT 1[0m
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (75.1ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (12.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/layouts/rails_admin/_navigation.html.haml (21.4ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (10.6ms)
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/layouts/rails_admin/pjax.html.haml (8.4ms)
+Completed 200 OK in 790ms (Views: 443.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery-6e3920d87a0f9be18aff05235d9c84f8.js?body=1" for 127.0.0.1 at 2017-04-03 00:43:04 +0600
+
+
+Started GET "/assets/jquery_ujs-476c4637710ab3426db93d8534b71423.js?body=1" for 127.0.0.1 at 2017-04-03 00:43:04 +0600
+
+
+Started GET "/admin/health_param?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-04-03 00:43:07 +0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"health_param"}
+  [1m[35mHealthParam Load (2.3ms)[0m  SELECT "health_params".* FROM "health_params" ORDER BY health_params.id desc LIMIT 20 OFFSET 0
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "health_params"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "health_params"
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (537.6ms)
+Completed 200 OK in 624ms (Views: 590.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/admin/health_param?_pjax=%5Bdata-pjax-container%5D&page=2&sort=id&sort_reverse=false&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-04-03 00:43:12 +0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "page"=>"2", "sort"=>"id", "sort_reverse"=>"false", "model_name"=>"health_param"}
+  [1m[36mHealthParam Load (0.2ms)[0m  [1mSELECT "health_params".* FROM "health_params" ORDER BY health_params.id desc LIMIT 20 OFFSET 20[0m
+  [1m[35m (3.4ms)[0m  SELECT COUNT(*) FROM "health_params"
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (275.9ms)
+Completed 200 OK in 341ms (Views: 328.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/admin/health_param?_pjax=%5Bdata-pjax-container%5D&sort=id&sort_reverse=false&_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-04-03 00:43:16 +0600
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "sort"=>"id", "sort_reverse"=>"false", "model_name"=>"health_param"}
+  [1m[36mHealthParam Load (1.5ms)[0m  [1mSELECT "health_params".* FROM "health_params" ORDER BY health_params.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "health_params"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "health_params"[0m
+  Rendered /home/snow/.rvm/gems/ruby-2.1.4@new/gems/rails_admin-1.1.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (396.1ms)
+Completed 200 OK in 425ms (Views: 414.4ms | ActiveRecord: 1.6ms)
