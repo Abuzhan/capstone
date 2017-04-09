@@ -44,7 +44,7 @@ class Api::V1::HealthParamsController < Api::V1::BaseController
 		#	format.json { render json: @health_param.errors, status: 404 }
 		#end
 		number = 1
-		for i in 1..30
+		for i in 1..10
 
 			health_param = HealthParam.new(create_params(number))
 			health_param.save
